@@ -1,38 +1,651 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Mulish", sans-serif;
+}
 .App {
-  text-align: center;
+  margin: 0 auto;
+  max-width: 1600px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --mainAccent: #0e88de;
+  --mainAccentButton: rgb(0, 174, 255);
+  --shadeLight: #7b8794;
+  --elementHover: rgb(243, 243, 243);
+  --title: #4f4f4f;
+  --body: #585858;
+  --mainRed: rgb(245, 94, 94);
+  --contentWidth: 623px;
+  --webSiteMaxWidth: 1600px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+hr {
+  margin-top: 10px;
+  border-color: rgb(255, 255, 255);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.link {
+  color: black;
+  text-decoration: none;
+}
+.linkBlue {
+  color: var(--mainAccent);
+}
+.form {
+  width: 60%;
+  margin: 0 auto;
+}
+.input--bad {
+  color: var(--mainRed);
+  font-weight: 700;
+  padding: 2px 0 5px 0;
+}
+.input {
+  padding: 20px;
+  font-size: 14px;
+  width: 100%;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
+  border: none;
+  border-radius: 5px;
+  outline: #0e88de;
+  font-family: "Mulish", sans-serif;
+}
+.inputElement {
+  margin-top: 10px;
+}
+textarea {
+  resize: vertical;
+  overflow: auto;
+  min-height: 200px;
+}
+.mainGridLayout {
+  max-width: 1000px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: 150px 623px 150px;
+  grid-gap: 30px;
+}
+.standardShadowBox {
+  background-color: #ffffff;
+  margin-top: 10px;
+  border-radius: 5px;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
+}
+.btn--add {
+  font-size: 30px;
+  color: var(--mainAccent);
+  cursor: pointer;
+  transition: 1s;
+}
+.btn--add:hover {
+  transform: rotateZ(160deg);
+}
+.mainMenu__wrapper {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 10px auto;
+  width: 90%;
+}
+.editUserFormModal__content,
+.singleServiceCard__content,
+.service__content,
+.singleTaskPage__content,
+.addUserTasksForm__content,
+.proposals__content,
+.userFeed__breadCramAndAction h3,
+.userFeed__search__content,
+.messageElement__content,
+.chatInputElement__content,
+.homePage__content,
+.zanatlijeCard__content,
+.inboxElement__content {
+  padding: 20px;
+}
+.zanatlijePage__content,
+.signInUser__wrapper {
+  max-width: var(--contentWidth);
+  margin: 0 auto;
+}
+.signInUserHero {
+  width: 100%;
+  /* height: 300px; */
+}
+
+.userProfile__contactAndStats--email,
+.userProfile__contactAndStats--phone,
+.userProfile__contactAndStats--credit,
+.userProfile__contactAndStats--status {
+  display: flex;
+}
+.userProfile__contactAndStats--email--icon,
+.userProfile__contactAndStats--phone--icon,
+.userProfile__contactAndStats--credit--icon,
+.userProfile__contactAndStats--status--icon,
+.userProfile__contactAndStats--grade--icon {
+  color: var(--title);
+  padding-right: 20px;
+}
+.userProfile__contactAndStats--email--text,
+.userProfile__contactAndStats--phone--text,
+.userProfile__contactAndStats--credit--text,
+.userProfile__contactAndStats--status--text,
+.userProfile__contactAndStats--grade--text {
+  color: var(--mainAccent);
+}
+.userProfile__contactAndStats--aboutMe--title {
+  text-align: center;
+  font-weight: 600;
+  color: var(--title);
+  font-size: 18px;
+  padding: 20px;
+}
+.userProfile__contactAndStats--aboutMe--body {
+  color: var(--body);
+}
+.userFeedTask__wrapper:hover,
+.proposals__wrapper:hover,
+.singleServiceCard__wrapper:hover,
+.zanatlijeCard__wrapper:hover,
+.inboxElement__content:hover {
+  background-color: var(--elementHover);
+}
+.userFeedTask--titleAndFav,
+.userServices__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.mainMenu__wrapper ul {
+  display: flex;
+}
+.mainMenu__wrapper ul li {
+  padding: 0 20px;
+  list-style: none;
+  cursor: pointer;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  transition: 0.3s;
+}
+.mainMenu__wrapper ul li:hover {
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+.logText {
+  font-size: 24px;
+  font-family: "Pattaya", sans-serif;
+}
+.sideBarLeft__wrapper {
+  max-width: 150px;
+  /* background-color: #afafaf; */
+}
+.sideBarRight__wrapper {
+  max-width: 150px;
+  /* background-color: #afafaf; */
+}
+.sideBarRight__item {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.sideBarLeft__item {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+  padding-left: 10px;
+  border-left: 3px solid rgba(0, 0, 0, 0);
+}
+.linkWithIcon {
+  display: flex;
+  align-items: center;
+}
+.sideBarRight__item--icon {
+  font-size: 18px;
+  color: #555555;
+  padding-right: 5px;
+}
+
+.userFeedTask__wrapper {
+  transition: 0.3s;
+}
+
+.userFeedTask__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--title);
+}
+.userFeedTask__favIcon--false {
+  color: #555555;
+  cursor: pointer;
+}
+.userFeedTask__favIcon {
+  color: var(--mainRed);
+  cursor: pointer;
+}
+.userFeedTask--priceAndInfo {
+  display: flex;
+  padding: 0 20px;
+  font-size: 14px;
+}
+.userFeedTask__price {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  font-weight: 600;
+}
+.userFeedTask__price h4 {
+  color: var(--mainAccent);
+  padding-left: 5px;
+}
+.userFeedTask__address {
+  display: flex;
+  align-items: center;
+}
+.userFeedTask__address p {
+  padding-left: 10px;
+  color: var(--mainAccent);
+}
+.userFeedTask__taskDescription {
+  padding: 5px 20px;
+}
+.userFeedTask__taskDescription p,
+.singleTaskPage__taskDescription p {
+  color: var(--body);
+}
+.userFeedTask__taskOwner {
+  padding: 20px;
+  font-size: 14px;
+}
+.btn {
+  padding-bottom: 20px;
+  width: 93%;
+  margin: 0px auto;
+  text-align: center;
+  cursor: pointer;
+}
+.btn p {
+  border: 2px solid var(--mainAccent);
+  border-radius: 5px;
+  padding: 10px;
+  color: var(--mainAccent);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.btn--search {
+  padding: 5px 10px;
+  border: 1px solid var(--mainAccent);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--mainAccent);
+  font-size: 16px;
+}
+.btn--close,
+.btn--delete,
+.btn--edit,
+.btn--search,
+.btn--redirect {
+  cursor: pointer;
+}
+.btn--redirect {
+  color: var(--mainAccent);
+}
+.button {
+  padding: 10px;
+  font-size: 16px;
+  font-family: "Mulish", sans-serif;
+  background-color: white;
+  border-radius: 5px;
+  border-color: var(--mainAccentButton);
+  color: var(--mainAccent);
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.button:hover {
+  background-color: rgb(227, 241, 248);
+}
+.input--search {
+  border: none;
+  border-bottom: 1px solid rgb(192, 192, 192);
+  /* border: 1px solid rgb(233, 233, 233); */
+  outline: none;
+  font-size: 18px;
+  width: 90%;
+}
+.userFeed__search {
+  margin-bottom: 50px;
+}
+.userFeed__search__content {
+  display: flex;
+  justify-content: space-between;
+}
+.modalTop {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+.modalTop h3 {
+  color: var(--shadeLight);
+}
+.application__modal {
+  margin-top: 30px;
+}
+.application__modal__content {
+  padding: 20px;
+  background-color: white;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
+}
+.userProfile__beadCram,
+.userProfile__nameAndActions,
+.userProfile__contactAndStats {
+  padding: 10px 20px;
+}
+.userProfile__contactAndStats--name h3 {
+  padding: 20px 0;
+}
+.userProfile__beadCram h3 {
+  color: var(--shadeLight);
+}
+.userProfile__actions {
+  display: flex;
+  color: var(--mainAccent);
+  cursor: pointer;
+}
+.userProfile__nameAndActions {
+  display: flex;
+  justify-content: space-between;
+}
+.userProfile__actions--edit {
+  padding-right: 20px;
+}
+
+.singleServiceCard__categoryAndPrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--title);
+}
+.confirmationModal__titleAndActions {
+  display: flex;
+  justify-content: space-between;
+}
+.editUserFormModal__title h3 {
+  color: var(--shadeLight);
+  padding-bottom: 40px;
+}
+.userServices__actions__title {
+  color: var(--title);
+}
+.singleServiceCard__Description {
+  margin-top: 10px;
+}
+.singleServiceCard__actions {
+  color: var(--mainAccent);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.singleServiceCard__actions p {
+  padding-left: 20px;
+}
+
+.singleTaskPage--priceAndInfo {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.proposal__msg--sender {
+  display: flex;
+  align-items: center;
+}
+.proposal__msg--sender h3 {
+  color: var(--title);
+  padding-left: 10px;
+}
+.proposal__msg--icon {
+  color: var(--title);
+}
+.proposal__msg--body p {
+  color: var(--body);
+  padding-top: 10px;
+}
+.proposal__msg--priceOffer p {
+  color: var(--mainAccent);
+  padding-top: 10px;
+}
+.proposal__msg--icon {
+  font-size: 18px;
+}
+.userFeed__breadCramAndAction {
+  color: var(--shadeLight);
+}
+
+.image__element {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50%;
+  z-index: -100;
+}
+
+.hero__greetings__wrapper {
+  margin: 20% 0 0 10%;
+}
+.hero__greetings__wrapper h1 {
+  width: 500px;
+}
+.hero__greetings__wrapper p {
+  width: 500px;
+  font-size: 18px;
+}
+.image__element--1 {
+  right: 100px;
+}
+.image__element--2 {
+  right: 100px;
+  transform: rotateZ(180deg);
+}
+.image__element--3 {
+  right: 0px;
+}
+.homePage__introStory__wrapper {
+  height: 80vh;
+  display: grid;
+  place-items: center;
+}
+.homePage__introStory__content {
+  width: var(--contentWidth);
+}
+.homePage__introStory__content h2 {
+  text-align: center;
+  padding: 30px;
+}
+.homePage__slider--item,
+.zanatlijaProfile__wrapper {
+  width: var(--contentWidth);
+  margin: 0 auto;
+}
+.homePage__sectionTitle {
+  text-align: center;
+  padding: 30px;
+}
+.homePage__instructions__wrapper,
+.zalatlijePage__wrapper {
+  max-width: var(--webSiteMaxWidth);
+  margin: 50px 0;
+}
+.homePage__instructions__title {
+  text-align: center;
+  padding: 30px;
+}
+.homepage__instructions__cards {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+
+.homePage__instructions__card {
+  width: 30%;
+  text-align: center;
+  /* border: 1px solid var(--mainAccent); */
+}
+.homePage__instructions__card p {
+  text-align: left;
+  margin-top: 30px;
+}
+.homePage__instructions__card h3 {
+  color: var(--mainAccent);
+  padding: 10px;
+  font-weight: 400;
+}
+.homePage__instructions__card--icon {
+  font-size: 30px;
+  text-align: center;
   color: white;
+  background-color: var(--mainAccent);
+  border-radius: 50px;
+  padding: 10px;
+}
+.homePage__instructions__content {
+  padding: 0 100px;
+}
+.images__floating__element {
+  position: absolute;
+}
+.float--2 {
+  right: 30px;
+}
+.float--3 {
+  right: 50%;
+}
+.zanatlijeCard__content--userName {
+  color: var(--title);
+}
+.zanatlijeCard__content--serviceDescription {
+  padding-top: 10px;
+}
+.zanatlijeCard__content--serviceCategory {
+  padding-top: 10px;
+  color: var(--mainAccent);
+}
+.userServices__content--title {
+  padding: 30px 0;
+  color: var(--shadeLight);
+}
+.singIn__image__element {
+  position: absolute;
+  z-index: -100;
+  top: 10%;
+}
+.signIn__title {
+  font-size: 24px;
+  text-align: center;
+  padding: 50px 0;
+  margin-top: 25%;
+}
+.signInUserForm {
+  margin: 0 auto;
+  /* margin-top: 55%; */
 }
 
-.App-link {
-  color: #61dafb;
+.confirmationModal__wrapper {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  top: 0;
+  background-color: #999999b4;
+  overflow-x: hidden;
+}
+.confirmationModal__content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 600px;
+}
+.confirmationModalTitle h3 {
+  font-weight: 400;
+  color: var(--title);
+  padding: 20px;
+}
+.confirmationModal--actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.signInUser--actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.messageElement__content--msgBody {
+  font-size: 16px;
+  padding: 10px 0;
+  /* font-weight: lighter; */
+}
+.messageElement__content--user {
+  display: flex;
+  align-items: center;
+}
+.messageElement__content--me {
+  /* background-color: rgb(237, 249, 252); */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.messageElement__content--msgTimeStamp {
+  padding-left: 10px;
+  font-size: 12px;
+}
+.messageElement__content--fromName {
+  font-weight: bold;
+}
+.inboxElement__taskName {
+  color: var(--title);
+}
+.inboxElement__basicInfo,
+.inboxElement__basicInfo--price,
+.inboxElement__basicInfo--address,
+.inboxElement__offerPrice {
+  display: flex;
+  align-items: center;
+}
+.inboxElement__basicInfo {
+  padding: 10px 0;
+}
+.inboxElement__basicInfo--price {
+  padding-right: 10px;
+  color: var(--mainAccent);
+}
+.inboxElement__basicInfo--price p {
+  padding: 0 10px 0 0;
+}
+.inboxElement__name {
+  padding: 10px 0;
+}
+.inboxElement__offerPrice p:first-child {
+  padding-right: 10px;
+}
+.inboxElement__proposalText {
+  padding: 10px 0;
+}
+.inboxElement__basicInfo--address,
+.inboxElement__offerPrice {
+  color: var(--mainAccent);
+}
+.tutorialIcon {
+  font-size: 12px;
+  color: var(--mainAccent);
+  cursor: pointer;
+}
+.tutorialIcon--absolute {
+  position: absolute;
+  z-index: 101;
+}
+.noContent__wrapper {
+  height: 300px;
+  display: grid;
+  place-items: center;
 }
