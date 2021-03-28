@@ -27,9 +27,7 @@ import 'react-notifications-component/dist/theme.css'
 import 'animate.css/animate.compat.css'
 
 
-
 function App(props) {
-
   let userToken = localStorage.getItem('userToken');
   useEffect(() => {
     if (userToken) {
