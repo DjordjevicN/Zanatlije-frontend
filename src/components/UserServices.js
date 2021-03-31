@@ -7,16 +7,20 @@ import { connect } from 'react-redux'
 import { CgAdd } from "react-icons/cg";
 
 function UserServices(props) {
+    let userServices = props.userServices;
     return (
-        <div className='userServices__Wrapper mainGridLayout'>
+        <div className='userServices__Wrapper mainGridLayout mobileGridLayout'>
             <SideBarLeft />
+            <div className='mobileMod--visible'>
+                <SideBarRight />
+            </div>
             <div className="userServices__content">
                 <div className="userServices__actions standardShadowBox">
                     <h3 className='userServices__actions__title'>Moje usluge</h3>
                     <Link to='/addUserServiceForm'><CgAdd className='btn--add' /></Link>
                 </div>
-                <div className="userServices__cards">
-                    {props.userServices.map(service => {
+                {userServices.length > 0 ? <div className="userServices__cards">
+                    {userServices.map(service => {
                         return (
                             <Link
                                 key={service.serviceId}
@@ -25,15 +29,22 @@ function UserServices(props) {
                             ><SingleServiceCard service={service} /></Link>
                         )
                     })}
-                </div>
+                </div> : <div className='noContent__wrapper'>
+                    <div className="noContent__content">
+                        <p>Trenutno nemate kreiranih usluga kliknite na <CgAdd className='btn--add' /> da dodate prvu uslugu </p>
+                    </div>
+                </div>}
             </div>
-            <SideBarRight />
+            <div className='mobileMod--disable'>
+                <SideBarRight />
+            </div>
         </div>
     );
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         userServices: state.userReducer.userServices
     }
 }
+
 export default connect(mapStateToProps, null)(UserServices);

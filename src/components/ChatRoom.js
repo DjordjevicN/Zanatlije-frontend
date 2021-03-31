@@ -16,12 +16,13 @@ function ChatRoom(props) {
     useEffect(() => {
         getMessages(chatRoomId)
         return
-
     }, [chatRoomId, getMessages]);
-
     return (
-        <div className='chat__Wrapper mainGridLayout'>
+        <div className='chat__Wrapper mainGridLayout mobileGridLayout'>
             <SideBarLeft />
+            <div className='mobileMod--visible' >
+                <SideBarRight />
+            </div>
             <div className="chat__content ">
                 <div className="chat__messages">
                     {props.messages.map(message => {
@@ -33,7 +34,9 @@ function ChatRoom(props) {
                     <ChatInputElement chatRoomId={chatRoomId} authUserId={authUserId} authUserName={authUserName} />
                 </div>
             </div>
-            <SideBarRight />
+            <div className='mobileMod--disable'>
+                <SideBarRight />
+            </div>
         </div>
     );
 }

@@ -10,7 +10,7 @@ function TaskCard({ task }) {
             </div>
             <div className="userFeedTask--priceAndInfo">
                 <div className="userFeedTask__price">
-                    <p>Budzet</p>
+                    <p>Budžet</p>
                     <h4>{task.taskPrice} din</h4>
                 </div>
                 <div className="userFeedTask__address"><MdLocationCity />

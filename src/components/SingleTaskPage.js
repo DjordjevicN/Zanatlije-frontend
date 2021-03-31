@@ -56,13 +56,13 @@ function SingleTaskPage(props) {
             {openConfirmationModal ? <div className="confirmationModal__wrapper ">
                 <div className="confirmationModal__content standardShadowBox">
                     <div className="confirmationModalTitle">
-                        <h3>Obrisi projekat ?</h3>
+                        <h3>Obriši projekat ?</h3>
                     </div>
                     <hr />
                     <div className="confirmationModal--actions">
                         <button className='button' onClick={() => {
                             deleteHandler()
-                        }}>Obrisi</button>
+                        }}>Obriši</button>
                         <button className='button' onClick={() => {
                             setOpenConfirmationModal(false)
                         }}>Odustani</button>
@@ -73,8 +73,11 @@ function SingleTaskPage(props) {
             <div>
                 {formModal ? <EditUserTaskModal singleTask={singleTask} closeModal={handleFormModal} /> : null}
             </div>
-            <div className="mainGridLayout">
+            <div className="mainGridLayout mobileGridLayout">
                 <SideBarLeft />
+                <div className='mobileMod--visible'>
+                    <SideBarRight />
+                </div>
                 <div className='singleTaskPage__Wrapper '>
                     <div className="singleTaskPage__content standardShadowBox">
                         <div className="singleTaskPage__card">
@@ -82,7 +85,7 @@ function SingleTaskPage(props) {
                                 <div className="singleTaskPage__title"><h3>{singleTask.taskTitle}</h3></div>
                             </div>
                             <div className="singleTaskPage--priceAndInfo">
-                                <div className="userFeedTask__price"><p>Budzet</p><h4>{singleTask.taskPrice} din</h4></div>
+                                <div className="userFeedTask__price"><p>Budžet</p><h4>{singleTask.taskPrice} din</h4></div>
                                 <div className="userFeedTask__address"><MdLocationCity /><p>{singleTask.taskAddress}</p></div>
                             </div>
                             <div className="singleTaskPage__taskDescription"><p>{singleTask.taskBody}</p></div>
@@ -90,10 +93,10 @@ function SingleTaskPage(props) {
                             <div className="singleServiceCard__actions">
                                 <p onClick={() => {
                                     handleFormModal()
-                                }} className='btn--edit'>Edit</p>
+                                }} className='btn--edit'>izmeni</p>
                                 <p className='btn--delete' onClick={() => {
                                     confirmationModalHandler()
-                                }}>Delete </p>
+                                }}>Obriši</p>
                             </div>
                         </div>
                     </div>
@@ -105,7 +108,9 @@ function SingleTaskPage(props) {
 
                     </div>
                 </div>
-                <SideBarRight />
+                <div className='mobileMod--disable'>
+                    <SideBarRight />
+                </div>
             </div>
         </div>
     );

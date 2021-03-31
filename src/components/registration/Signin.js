@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SignInUserValidation } from '../../validations/SignInUserValidation'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import * as userActions from '../../store/actions/userActions'
 
 // design_elements
@@ -11,7 +11,10 @@ import ElementSVGOTwo from '../imagesSvg/ElementSVGTwo'
 import ElementSVGThree from '../imagesSvg/ElementSVGThree'
 
 function Signin(props) {
-
+    const [redirect, setRedirect] = useState(false);
+    if (redirect) {
+        return <Redirect to='/' />
+    }
     return (
         <div className="signInUser__wrapper ">
             <div className="signInUser__content">
@@ -33,7 +36,7 @@ function Signin(props) {
                         validationSchema={SignInUserValidation}
                         onSubmit={(fields) => {
                             props.createUser(fields)
-
+                            setRedirect(true)
                         }}
                     >
                         <Form className='form'>

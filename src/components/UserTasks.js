@@ -11,8 +11,11 @@ import { FaQuestionCircle } from "react-icons/fa";
 function UserTasks(props) {
 
     return (
-        <div className='userFeedPage__Wrapper mainGridLayout'>
+        <div className='userFeedPage__Wrapper mainGridLayout mobileGridLayout'>
             <SideBarLeft />
+            <div className='mobileMod--visible'>
+                <SideBarRight />
+            </div>
             <div className="userFeed__content">
                 <FaQuestionCircle className="tutorialIcon tutorialIcon--absolute" onClick={() => {
                     notifications.tips(tutorial.projectSearch)
@@ -36,7 +39,9 @@ function UserTasks(props) {
                 </div>}
 
             </div>
-            <SideBarRight />
+            <div className='mobileMod--disable'>
+                <SideBarRight />
+            </div>
         </div>
     );
 }

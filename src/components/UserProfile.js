@@ -41,7 +41,7 @@ function UserProfile(props) {
             {openConfirmationModal ? <div className="confirmationModal__wrapper ">
                 <div className="confirmationModal__content standardShadowBox">
                     <div className="confirmationModalTitle">
-                        <h3>Da li zelite da se izlogujete ?</h3>
+                        <h3>Da li želite da se izlogujete ?</h3>
                     </div>
                     <hr />
                     <div className="confirmationModal--actions">
@@ -56,13 +56,16 @@ function UserProfile(props) {
             </div> : null}
 
 
-            <div className='mainGridLayout'>
+            <div className='mainGridLayout mobileGridLayout'>
                 <SideBarLeft />
+                <div className='mobileMod--visible' >
+                    <SideBarRight />
+                </div>
                 <div className='task__wrapper'>
 
                     <div className="UserProfile__wrapper standardShadowBox">
                         <div className="userProfile__beadCram">
-                            <h3>Korisnicke informacije</h3>
+                            <h3>Korisničke informacije</h3>
                             <hr />
                         </div>
                         <div className="userProfile__nameAndActions">
@@ -71,11 +74,11 @@ function UserProfile(props) {
                                 <div className="userProfile__actions--edit">
                                     <p onClick={() => {
                                         userModalFormHandler()
-                                    }}>Edit</p>
+                                    }}>izmeni</p>
                                 </div>
                                 <p onClick={() => {
                                     confirmationModalHandler()
-                                }} >Sign out</p>
+                                }} >Izloguj se</p>
                             </div>
 
                         </div>
@@ -97,7 +100,7 @@ function UserProfile(props) {
                                 <p className="userProfile__contactAndStats--credit--icon ">Kredit</p>
                                 <p className="userProfile__contactAndStats--credit--text ">{userCredit}</p>
                                 <FaQuestionCircle className="tutorialIcon " onClick={() => {
-                                    notifications.tips(tutorial.projectSearch)
+                                    notifications.tips(tutorial.creditTut)
                                 }} />
 
                             </div>
@@ -105,7 +108,7 @@ function UserProfile(props) {
                                 <p className="userProfile__contactAndStats--credit--icon ">Status</p>
                                 <p className="userProfile__contactAndStats--credit--text ">{userStatus}</p>
                                 <FaQuestionCircle className="tutorialIcon" onClick={() => {
-                                    notifications.tips(tutorial.projectSearch)
+                                    notifications.tips(tutorial.statusTut)
                                 }} />
                             </div>
                             <div className="userProfile__contactAndStats--status ">
@@ -119,15 +122,14 @@ function UserProfile(props) {
                                 <div className="userProfile__contactAndStats--aboutMe--body">
                                     <p>{aboutMe}</p>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
-
                     <UserDashboardView />
                 </div>
-                <SideBarRight />
+                <div className='mobileMod--disable'>
+                    <SideBarRight />
+                </div>
             </div>
         </div>
     );

@@ -61,5 +61,24 @@ export const deleteService = (value) => {
         })
     }
 }
+
 // get filtered services
+export const getServiceById = (value) => {
+
+    return async (dispatch) => {
+        dispatch({
+            type: "LOADING_TRUE"
+        })
+        let response = await Axios.post(`${hosting}/getServiceById`, { value })
+        if (response.data.success) {
+            dispatch({
+                type: 'SET_USER_SERVICES',
+                payload: response.data.results
+            })
+        }
+        dispatch({
+            type: 'LOADING_FALSE'
+        })
+    }
+}
 

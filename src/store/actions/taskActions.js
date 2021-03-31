@@ -73,3 +73,23 @@ export const getTaskProposals = (value) => {
         })
     }
 }
+// GET TASK BY ID
+export const getTaskById = (value) => {
+    return async (dispatch) => {
+        dispatch({
+            type: "LOADING_TRUE"
+        })
+        let response = await Axios.post(`${hosting}/getTaskById`, { value })
+        console.log(response);
+        if (response.data.success) {
+            dispatch({
+                type: 'SET_SEARCH_TASKS',
+                payload: response.data.results
+            })
+        }
+
+        dispatch({
+            type: 'LOADING_FALSE'
+        })
+    }
+}

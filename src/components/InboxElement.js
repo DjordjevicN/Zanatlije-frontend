@@ -3,7 +3,6 @@ import { MdLocationCity } from "react-icons/md";
 
 function InboxElement(props) {
     let taskProposal = props.task
-    console.log(taskProposal);
     return (
         <div className='inboxElement__wrapper'>
             <div className="inboxElement__content standardShadowBox">
@@ -12,7 +11,7 @@ function InboxElement(props) {
                 </div>
                 <div className="inboxElement__basicInfo">
                     <div className="inboxElement__basicInfo--price">
-                        <p>Budzet</p>
+                        <p>Budžet</p>
                         <h4>{taskProposal.taskPrice} din</h4>
                     </div>
                     <div className="inboxElement__basicInfo--address"><MdLocationCity />

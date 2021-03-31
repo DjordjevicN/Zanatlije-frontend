@@ -9,12 +9,14 @@ import * as actionCreator from '../store/actions/taskActions'
 function AddUserTasksForm(props) {
 
     const redirectHandler = () => {
-        // if loading is false than check if success
         window.location = '/userTasks'
     }
     return (
-        <div className="mainGridLayout">
+        <div className="mainGridLayout mobileGridLayout">
             <SideBarLeft />
+            <div className='mobileMod--visible' >
+                <SideBarRight />
+            </div>
             <div className="addUserTasksForm__wrapper">
                 <div className="addUserTasksForm__content standardShadowBox">
                     <div className="editUserFormModal__title">
@@ -59,7 +61,9 @@ function AddUserTasksForm(props) {
                     </Formik>
                 </div>
             </div>
-            <SideBarRight />
+            <div className='mobileMod--disable'>
+                <SideBarRight />
+            </div>
         </div>
     );
 }

@@ -30,7 +30,7 @@ function ChatInputElement(props) {
                 </div>
                 <button className="btn--send button" onClick={() => {
                     msgSendingHandler()
-                }} >Posalji</button>
+                }} >Pošalji</button>
             </div>
         </div>
     );

@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import ZanatlijeCard from './ZanatlijeCard'
 import * as actionCreator from '../store/actions/globalActions'
+import * as notifications from '../globalConfigurations/Notifications'
+import { tutorial } from '../globalConfigurations/Tutorial'
+import { FaQuestionCircle } from "react-icons/fa";
 
 function Zanatlije(props) {
 
@@ -26,15 +29,18 @@ function Zanatlije(props) {
         <div className="zalatlijePage__wrapper">
             <div className="zanatlijePage__content">
                 {/* Serach  */}
+                <FaQuestionCircle className="tutorialIcon tutorialIcon--absolute" onClick={() => {
+                    notifications.tips(tutorial.userSearch)
+                }} />
                 <div className='userFeed__search standardShadowBox'>
                     <div className="userFeed__search__content">
-                        <input className='input--search' type="text" placeholder="Pronadji zanatliju" onChange={(e) => {
+                        <input className='input--search ' type="text" placeholder="Pronadji zanatliju" onChange={(e) => {
                             setSearchInput(e.target.value)
 
                         }} onKeyDown={(e) => {
                             keyValidation(e)
                         }} />
-                        <button onClick={() => taskSearchHandler()} className='btn--search'>Traži</button>
+                        <button onClick={() => taskSearchHandler()} className='btn--search button'>Traži</button>
                     </div>
                 </div>
                 <div>

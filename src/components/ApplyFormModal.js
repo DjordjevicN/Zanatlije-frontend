@@ -41,11 +41,10 @@ function ApplyFormModal({ closeModal, taskInformation, authUser, createProposal 
                             <ErrorMessage className="input--bad" component='div' name="proposalInitMessage" />
                         </div>
 
-                        <button className='button' type='submit' >Posalji</button>
+                        <button className='button' type='submit' >Pošalji</button>
                     </Form>
                 </Formik>
             </div>
-
         </div>
     );
 }

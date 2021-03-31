@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import SideBarLeft from './SideBarLeft'
 import SideBarRight from './SideBarRight'
 import EditUserService from './EditUserService'
-
-
 import * as actionCreator from '../store/actions/serviceActions'
 import * as userActionCreator from '../store/actions/userActions'
 
@@ -25,7 +23,6 @@ function Service(props) {
             redirectHandler()
         }
     }
-
     const handleFormModal = () => {
         if (formModal) {
             setFormModal(false)
@@ -33,8 +30,6 @@ function Service(props) {
             setFormModal(true)
         }
     }
-
-
     const confirmationModalHandler = () => {
         if (openConfirmationModal) {
             setOpenConfirmationModal(false)
@@ -42,21 +37,18 @@ function Service(props) {
             setOpenConfirmationModal(true)
         }
     }
-
-
-
     return (
         <div>
             {openConfirmationModal ? <div className="confirmationModal__wrapper ">
                 <div className="confirmationModal__content standardShadowBox">
                     <div className="confirmationModalTitle">
-                        <h3>Obrisi projekat ?</h3>
+                        <h3>Obriši projekat ?</h3>
                     </div>
                     <hr />
                     <div className="confirmationModal--actions">
                         <button className='button' onClick={() => {
                             deleteHandler()
-                        }}>Obrisi</button>
+                        }}>Obriši</button>
                         <button className='button' onClick={() => {
                             setOpenConfirmationModal(false)
                         }}>Odustani</button>
@@ -65,8 +57,11 @@ function Service(props) {
             </div> : null}
 
             {formModal ? <EditUserService service={service} handleFormModal={handleFormModal} /> : null}
-            <div className=' mainGridLayout'>
-                <SideBarLeft />
+            <div className=' mainGridLayout mobileGridLayout'>
+                <SideBarRight />
+                <div className='mobileMod--visible' >
+                    <SideBarLeft />
+                </div>
                 <div>
                     <div className="service__wrapper standardShadowBox">
                         <div className="service__content ">
@@ -80,15 +75,17 @@ function Service(props) {
                             <div className="singleServiceCard__actions">
                                 <p onClick={() => {
                                     handleFormModal()
-                                }} className='btn--edit'>Edit</p>
+                                }} className='btn--edit'>Izmeni</p>
                                 <p className='btn--delete' onClick={() => {
                                     confirmationModalHandler()
-                                }}>Delete </p>
+                                }}>Obriši</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <SideBarRight />
+                <div className='mobileMod--disable' >
+                    <SideBarRight />
+                </div>
             </div>
         </div>
     );

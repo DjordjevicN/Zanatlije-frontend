@@ -15,8 +15,11 @@ function AddUserServiceForm(props) {
         window.location = 'userServices'
     }
     return (
-        <div className='userFeedPage__Wrapper mainGridLayout'>
+        <div className='userFeedPage__Wrapper mainGridLayout mobileGridLayout'>
             <SideBarLeft />
+            <div className='mobileMod--visible'>
+                <SideBarRight />
+            </div>
             <div className="userFeed__content">
                 <div className="editUserFormModal__wrapper standardShadowBox">
                     <div className="editUserFormModal__content ">
@@ -56,7 +59,9 @@ function AddUserServiceForm(props) {
                     </div>
                 </div>
             </div>
-            <SideBarRight />
+            <div className='mobileMod--disable'>
+                <SideBarRight />
+            </div>
         </div>
 
     );

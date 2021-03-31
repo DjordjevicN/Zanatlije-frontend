@@ -23,9 +23,9 @@ function HomePage(props) {
                 <div className="homePage__content--hero">
                     <div className="hero__greetings__wrapper">
                         <h1>Hej!</h1>
-                        <h1>Da li poznaješ nekoga?</h1>
-                        <p>Majstora? Frizera? Mi ih znamo sve! Istraži bazu podataka ili oglasi novi posao za koji ti je potreban zanatlija.</p>
-                        <Link to='/zanatlije'><button className="button">Pretraga</button></Link>
+                        <h1>Da li poznaješ nekog?</h1>
+                        <p>...Majstora? Frizera? Mi ih znamo sve! Istraži bazu podataka ili oglasi novi projekat za koji ti je potreban zanatlija.</p>
+                        <Link to='/zanatlije'><button className="button homePageBtn">Pretraga</button></Link>
 
                     </div>
                     <div className="hero__animation__wrapper">
@@ -33,14 +33,16 @@ function HomePage(props) {
                             <ElementSVGOne className="image__element image__element--1" />
                             <ElementSVGOTwo className="image__element image__element--2" />
                             <ElementSVGThree className="image__element image__element--3" />
-
                         </div>
                     </div>
                 </div>
                 <div className="homePage__introStory__wrapper">
                     <div className="homePage__introStory__content">
                         <h2>Zanatlije</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt massa urna id nunc. Molestie elit cras lacus, mauris. Congue sit vel eget tempus cras quam nisi, nunc. At porttitor augue malesuada hac enim ac enim.</p>
+                        <p>Dobro došli na sajt Zanatlije uz čiju pomoć možete
+                        lako da pronađete ili oglasite projekat za čiju
+                        realizaciju su potrebne vredne ruke. Dovoljno je
+samo da pratite uputstva.</p>
                     </div>
                 </div>
                 <ElementSVGOne className="images__floating__element float--1" />
@@ -51,7 +53,6 @@ function HomePage(props) {
                         <div className="homePage__slider__wrapper">
                             <div className="homePage__slider__content">
                                 <div className="homePage__slider--item">
-                                    {/* Return only 3 */}
                                     {props.tasks.map(task => {
                                         return (
                                             <Link
@@ -80,22 +81,22 @@ function HomePage(props) {
                             <div className="homePage__instructions__card">
                                 <BiKey className="homePage__instructions__card--icon" />
                                 <div className="homePage__instructions__card--title">
-                                    <h3>Napravi nalog</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt massa urna id nunc. Molestie elit cras lacus, mauris. Congue sit vel eget tempus cras quam nisi, nunc. At porttitor augue malesuada hac enim ac enim.</p>
+                                    <h3>Napravi Profil</h3>
+                                    <p>Pokaži šta znaš</p>
                                 </div>
                             </div>
                             <div className="homePage__instructions__card">
                                 <BiSearchAlt2 className="homePage__instructions__card--icon" />
                                 <div className="homePage__instructions__card--title">
                                     <h3>Pronadji projekat</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt massa urna id nunc. Molestie elit cras lacus, mauris. Congue sit vel eget tempus cras quam nisi, nunc. At porttitor augue malesuada hac enim ac enim.</p>
+                                    <p>Od šetnje ljubimca do renoviranja stana: sigurno ćeš naći nešto za sebe!</p>
                                 </div>
                             </div>
                             <div className="homePage__instructions__card">
                                 <BiTask className="homePage__instructions__card--icon" />
                                 <div className="homePage__instructions__card--title">
                                     <h3>Apliciraj za projekat</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt massa urna id nunc. Molestie elit cras lacus, mauris. Congue sit vel eget tempus cras quam nisi, nunc. At porttitor augue malesuada hac enim ac enim.</p>
+                                    <p>Najbolji zanatlija po izboru korisnika dobija posao!</p>
                                 </div>
                             </div>
 
@@ -103,7 +104,6 @@ function HomePage(props) {
                     </div>
                 </div>
                 <ElementSVGThree className="images__floating__element float--3" />
-
             </div>
         </div>
     );

@@ -2,8 +2,8 @@ import React from 'react';
 
 function ZanatlijeCard({ user }) {
     return (
-        <div className="zanatlijeCard__wrapper standardShadowBox">
-            <div className="zanatlijeCard__content">
+        <div className="zanatlijeCard__wrapper ">
+            <div className="zanatlijeCard__content standardShadowBox">
                 <div className="zanatlijeCard__content--userName">
                     <h3>{user.userName}</h3>
                 </div>

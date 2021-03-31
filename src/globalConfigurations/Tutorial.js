@@ -1,5 +1,8 @@
 export const tutorial = {
-    projectSearch: 'crambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus Pag',
-    rightNavigation: "Moje usluge: Ovde mozete da organizujete usluge koje nudite. Projekti: Ovde mozete kreirati projekte",
-    projectProposals: 'ovo je ono sto si ti ponudio za task '
+    projectSearch: 'Tragate za određenim projektom? Unesite željene reči i dobićete spisak svih ponuđenih projekata koji mogu da odgovaraju vašim željama.',
+    rightNavigation: "Istražite ponuđene opcije, dodajte svoje usluge,otkrijte projekte i pregledajte svoje poslate ponude.",
+    projectProposals: 'ovo je ono sto si ti ponudio za task ',
+    userSearch: 'Pronadjite Zanatliju. Ovde se izlistavaju profili na osnovu usluga koje oni nude. npr. Vodoinstalater, Šetač pasa, Frizer, Elektricar, Maser... ',
+    creditTut: 'Evidencija vašeg kredita, odnosno poena uz pomoć kojih možete da se prijavite za određene projekte. Svaka prijava nosi 1 kredit.',
+    statusTut: 'Standard profil podrazumeva novih 30 kredita na svakih nedelju dana. VIP profil podrazumeva kupovinu dodatnih kredita u određenom vremenskom periodu.'
 }

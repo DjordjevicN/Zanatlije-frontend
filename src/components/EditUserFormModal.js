@@ -13,7 +13,7 @@ function EditUserFormModal(props) {
             <div className="confirmationModal__content standardShadowBox">
                 <div className="confirmationModal__titleAndActions">
                     <div className="editUserFormModal__title">
-                        <h3>Izmeni korisnicke informacije</h3>
+                        <h3>Izmeni korisničke informacije</h3>
                     </div>
                     <div className="confirmationModal--close btn--close" onClick={() => {
                         props.closeModal()
@@ -59,7 +59,7 @@ function EditUserFormModal(props) {
                             <Field data-gramm_editor="false" component="textarea" className='input' name='aboutMe' type='text' placeholder='O meni' />
                             <ErrorMessage className="input--bad" component='div' name="aboutMe" />
                         </div>
-                        <button className='button' type='submit'>Sacuvaj</button>
+                        <button className='button' type='submit'>Sačuvaj</button>
                     </Form>
                 </Formik>
             </div>

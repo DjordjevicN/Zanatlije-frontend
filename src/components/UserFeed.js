@@ -22,26 +22,29 @@ function UserFeed(props) {
         }
     }
     return (
-        <div className='userFeedPage__Wrapper mainGridLayout'>
+        <div className='userFeedPage__Wrapper mainGridLayout mobileGridLayout'>
             <SideBarLeft />
+            <div className='mobileMod--visible' >
+                <SideBarRight />
+            </div>
             <div className="userFeed__content">
                 <FaQuestionCircle className="tutorialIcon tutorialIcon--absolute" onClick={() => {
                     notifications.tips(tutorial.projectSearch)
                 }} />
 
-                <div className='userFeed__search standardShadowBox'>
-                    <div className="userFeed__search__content">
+                <div className='userFeed__search '>
+                    <div className="userFeed__search__content standardShadowBox">
                         <input className='input--search' onKeyDown={(e) => {
                             keyValidation(e)
                         }} onChange={(e) => {
                             setSearchInput(e.target.value)
                         }} type="text" placeholder="Trazi Projekat" />
-                        <button onClick={() => taskSearchHandler()} className='btn--search'>Traži</button>
+                        <button onClick={() => taskSearchHandler()} className='btn--search button'>Traži</button>
                     </div>
                 </div>
-                <div className='userFeed__breadCramAndAction standardShadowBox'>
+                {/* <div className='userFeed__breadCramAndAction '>
                     <h3>Projekti</h3>
-                </div>
+                </div> */}
 
                 <div className="userFeedTasks__cards">
                     {props.tasks.map(task => {
@@ -55,7 +58,9 @@ function UserFeed(props) {
                     })}
                 </div>
             </div>
-            <SideBarRight />
+            <div className='mobileMod--disable'>
+                <SideBarRight />
+            </div>
         </div>
     );
 }

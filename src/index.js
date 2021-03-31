@@ -20,9 +20,9 @@ const rootReducer = combineReducers({
 
 // @@ Comment first and second and uncomment third before Build
 // ********* 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)))
-// const store = createStore(rootReducer, applyMiddleware(thunk))
+// const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+// const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)))
+const store = createStore(rootReducer, applyMiddleware(thunk))
 // ******** 
 
 
