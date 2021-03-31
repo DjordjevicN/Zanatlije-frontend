@@ -14,19 +14,16 @@ import UserTasks from './components/UserTasks'
 import SingleTaskPage from './components/SingleTaskPage'
 import AddUserTasksForm from './components/AddUserTasksForm'
 import ChatRoom from './components/ChatRoom'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 import Zanatlije from './components/Zanatlije'
 import ZanatlijaProfile from './components/ZanatlijaProfile'
 import Signin from './components/registration/Signin'
 import Login from './components/registration/Login'
 import Offers from './components/Offers'
-
 import * as actionCreator from './store/actions/userActions'
 import ReactNotification from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import 'animate.css/animate.compat.css'
-
-
 
 function App(props) {
 
@@ -61,7 +58,7 @@ function App(props) {
           <Route path='/addUserServiceForm' component={AddUserServiceForm} />
           <Route path='/addUserTasksForm' component={AddUserTasksForm} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );
