@@ -1,6 +1,7 @@
 import Axios from 'axios'
 // let websiteUrl = 'http://localhost:3000'
-let hosting = "http://localhost:3001"
+// let hosting = "http://localhost:3001"
+let hosting = "http://api.zanatlije.rs/"
 
 // CREATE TASK
 export const createTask = (value) => {
