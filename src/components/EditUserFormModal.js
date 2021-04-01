@@ -7,7 +7,6 @@ import * as userActions from '../store/actions/userActions'
 
 
 function EditUserFormModal(props) {
-    console.log(props);
     return (
         <div className="confirmationModal__wrapper">
             <div className="confirmationModal__content standardShadowBox">

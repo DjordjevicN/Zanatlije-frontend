@@ -2,7 +2,6 @@ import React from 'react';
 import { BsPeopleCircle } from "react-icons/bs";
 // @@ proposal card component part of inbox (singleTaskPage)
 function Proposals({ proposal }) {
-    console.log(proposal);
     return (
         <div className="proposals__wrapper standardShadowBox">
             <div className="proposals__content">

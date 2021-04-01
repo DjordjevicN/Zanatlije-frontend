@@ -67,9 +67,6 @@ const userReducer = (state = userState, action) => {
         case "EMPTY_USER_PROPOSALS":
             newState.tasksProposals = [];
             break;
-        case "REDIRECT_USER_TO_FEED":
-            console.log('redirectr');
-            break;
         // *************************************** 
         default:
             newState = state

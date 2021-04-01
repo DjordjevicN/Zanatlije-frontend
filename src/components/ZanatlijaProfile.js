@@ -42,9 +42,7 @@ function ZanatlijaProfile(props) {
                 </div>
                 <div className="usersServices__wrapper">
                     <div className="usersServices__content">
-
                         {props.userPreview.map(service => {
-                            console.log(service);
                             return (
                                 <SingleServiceCardPreview key={service.serviceId} service={service} />
                             )

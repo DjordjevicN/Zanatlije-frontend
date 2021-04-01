@@ -60,7 +60,6 @@ export const getTaskProposals = (value) => {
             type: "LOADING_TRUE"
         })
         let response = await Axios.post(`${hosting}/getTaskProposals`, { value })
-        console.log(response);
         if (response.data.success) {
             dispatch({
                 type: 'SET_TASK_PROPOSALS',
@@ -80,14 +79,12 @@ export const getTaskById = (value) => {
             type: "LOADING_TRUE"
         })
         let response = await Axios.post(`${hosting}/getTaskById`, { value })
-        console.log(response);
         if (response.data.success) {
             dispatch({
                 type: 'SET_SEARCH_TASKS',
                 payload: response.data.results
             })
         }
-
         dispatch({
             type: 'LOADING_FALSE'
         })

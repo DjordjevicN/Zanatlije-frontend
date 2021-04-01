@@ -20,7 +20,6 @@ function SingleTaskPage(props) {
     let singleTask = props.tasks.find(item => item.taskId === taskId)
     let proposals = props.tasksProposals;
     let authUserId = props.authUser.userId
-    console.log(proposals);
     useEffect(() => {
         return getProposals(taskId)
     }, [getProposals, taskId]);
@@ -52,7 +51,6 @@ function SingleTaskPage(props) {
     }
     return (
         <div>
-
             {openConfirmationModal ? <div className="confirmationModal__wrapper ">
                 <div className="confirmationModal__content standardShadowBox">
                     <div className="confirmationModalTitle">
@@ -69,7 +67,6 @@ function SingleTaskPage(props) {
                     </div>
                 </div>
             </div> : null}
-
             <div>
                 {formModal ? <EditUserTaskModal singleTask={singleTask} closeModal={handleFormModal} /> : null}
             </div>
@@ -89,7 +86,6 @@ function SingleTaskPage(props) {
                                 <div className="userFeedTask__address"><MdLocationCity /><p>{singleTask.taskAddress}</p></div>
                             </div>
                             <div className="singleTaskPage__taskDescription"><p>{singleTask.taskBody}</p></div>
-
                             <div className="singleServiceCard__actions">
                                 <p onClick={() => {
                                     handleFormModal()
@@ -100,12 +96,10 @@ function SingleTaskPage(props) {
                             </div>
                         </div>
                     </div>
-
                     <div className="taskProposals">
                         {proposals.map((proposal) => {
                             return <Link to={`/chatRoom/${proposal.proposalId}`} key={proposal.proposalId} className='link'><Proposals proposal={proposal} /></Link>
                         })}
-
                     </div>
                 </div>
                 <div className='mobileMod--disable'>

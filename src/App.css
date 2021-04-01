@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: "Mulish", sans-serif;
 }
@@ -96,7 +97,8 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px auto;
+  margin: 0px auto;
+  padding-top: 10px;
   width: 90%;
 }
 .editUserFormModal__content,
@@ -113,6 +115,34 @@ textarea {
 .zanatlijeCard__content,
 .inboxElement__content {
   padding: 20px;
+}
+
+.homePage__content--hero {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.hero__animation__wrapper {
+  display: grid;
+  place-items: center;
+}
+
+.heroPage__img {
+  width: 100%;
+}
+.hero__greetings__wrapper {
+  margin: 10% 0 0 10%;
+  width: 100%;
+}
+.hero__greetings__wrapper h1 {
+  width: 70%;
+  font-size: 68px;
+  line-height: 70px;
+}
+.hero__greetings__wrapper p {
+  width: 70%;
+  font-size: 18px;
+  margin-top: 20px;
 }
 .zanatlijePage__content,
 .signInUser__wrapper {
@@ -154,6 +184,7 @@ textarea {
 .userProfile__contactAndStats--aboutMe--body {
   color: var(--body);
 }
+
 .userFeedTask__wrapper:hover,
 .proposals__wrapper:hover,
 .singleServiceCard__wrapper:hover,
@@ -427,52 +458,6 @@ textarea {
   color: var(--shadeLight);
 }
 
-.image__element {
-  position: absolute;
-  top: 5%;
-  right: 10%;
-  z-index: -100;
-}
-.image__element--1 {
-  /* top: 0px; */
-  transform: rotateZ(50deg);
-}
-.image__element--2 {
-  top: 90px;
-  right: 20%;
-  transform: rotateZ(300deg);
-}
-.image__element--3 {
-  transform: rotateZ(180deg);
-  top: 0;
-  right: 10px;
-}
-.element {
-  position: absolute;
-}
-.float1 {
-  right: 20px;
-}
-.float2 {
-  left: 20px;
-}
-.float3 {
-  left: 10%;
-  top: 100%;
-  width: 250px;
-}
-.hero__greetings__wrapper {
-  margin: 10% 0 0 10%;
-}
-.hero__greetings__wrapper h1 {
-  width: 45%;
-}
-.hero__greetings__wrapper p {
-  width: 45%;
-  font-size: 18px;
-  margin-top: 20px;
-}
-
 .homePage__introStory__wrapper {
   height: 80vh;
   display: grid;
@@ -676,8 +661,7 @@ textarea {
   color: white;
 }
 .footer__wrapper {
-  position: absolute;
-  bottom: 0;
+  width: 100%;
 
   display: grid;
   place-items: center;
@@ -691,29 +675,62 @@ textarea {
 
 .mobileMenu__wrapper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: grid;
   place-items: center;
   position: fixed;
-  background-color: #202020;
+  top: -10px;
+  background-color: #000000;
   z-index: 102;
 }
-.mobile__content {
-}
+
 .mobileMenuBurger {
+  display: none;
   font-size: 20px;
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
   z-index: 103;
   color: var(--mainAccent);
+  cursor: pointer;
 }
 .mobile__content ul li {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 .mobileLink {
   color: white;
   font-size: 20px;
+  background: linear-gradient(
+    56deg,
+    rgb(131, 210, 255) 0%,
+    rgb(0, 108, 170) 100%
+  );
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.mobileLink:hover {
+  background: linear-gradient(
+    56deg,
+    rgb(131, 210, 255) 25%,
+    rgb(0, 108, 170) 100%
+  );
+}
+.heroImage {
+  width: 100%;
+}
+.usersServices__content {
+  /* width: 100%;
+  background-color: #0e88de; */
+}
+@media only screen and (max-width: 1070px) {
+  .hero__greetings__wrapper h1 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .hero__greetings__wrapper p {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 992px) {
   .homePage__instructions__card {
@@ -731,8 +748,13 @@ textarea {
   .button {
     font-size: 13px;
   }
-  .image__element {
-    right: 7%;
+  .hero__greetings__wrapper h1 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  .hero__greetings__wrapper p {
+    width: 90%;
+    font-size: 16px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -795,11 +817,34 @@ textarea {
   .homePage__slider--item {
     width: 99%;
   }
+  .mobileMenuBurger {
+    display: inline;
+  }
+  .mainMenu__wrapper ul {
+    display: none;
+  }
+  .image__element {
+    width: 50%;
+  }
 }
 @media only screen and (max-width: 533px) {
   .linkWithIcon {
     display: flex;
     flex-direction: column;
+  }
+  .hero__greetings__wrapper h1 {
+    font-size: 30px;
+    line-height: 25px;
+  }
+  .hero__greetings__wrapper p {
+    width: 100%;
+    font-size: 16px;
+  }
+  .heroImage {
+    width: 100%;
+  }
+  .homePage__instructions__content {
+    padding: 0;
   }
 }
 /* 394px is my phone lol  */

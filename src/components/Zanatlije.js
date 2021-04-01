@@ -8,16 +8,12 @@ import { tutorial } from '../globalConfigurations/Tutorial'
 import { FaQuestionCircle } from "react-icons/fa";
 
 function Zanatlije(props) {
-
     const [searchInput, setSearchInput] = useState('');
-
     let initPull = props.getInitialProfiles;
     useEffect(() => {
         return initPull()
     }, [initPull]);
-
     let taskSearchHandler = () => {
-        console.log(searchInput);
         props.getSearchUsers(searchInput)
     }
     const keyValidation = (e) => {

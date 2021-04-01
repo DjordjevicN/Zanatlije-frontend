@@ -8,6 +8,7 @@ function SingleServiceCard(props) {
                 <div className="singleServiceCard__categoryAndPrice">
                     <h3>{service.serviceCategory}</h3>
                     <h3>{`${service.servicePrice} din`}</h3>
+
                 </div>
                 <div className="singleServiceCard__Description">
                     <p>{service.serviceDescription.substring(0, 200)}</p>
