@@ -9,8 +9,6 @@ import initState from './store/reducers/initReducer'
 import userReducer from './store/reducers/userReducer'
 import globalReducer from './store/reducers/globalReducer'
 
-
-
 const rootReducer = combineReducers({
   initState,
   userReducer,
@@ -23,8 +21,6 @@ const rootReducer = combineReducers({
 // const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)))
 const store = createStore(rootReducer, applyMiddleware(thunk))
 // ******** 
-
-
 
 ReactDOM.render(
   <Provider store={store}>
