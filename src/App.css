@@ -116,7 +116,11 @@ textarea {
 .inboxElement__content {
   padding: 20px;
 }
-
+.homePage__content--hero__wrapper {
+  display: grid;
+  place-items: center;
+  height: 90vh;
+}
 .homePage__content--hero {
   width: 100%;
   display: grid;
@@ -459,7 +463,7 @@ textarea {
 }
 
 .homePage__introStory__wrapper {
-  height: 80vh;
+  height: 50vh;
   display: grid;
   place-items: center;
 }
@@ -491,9 +495,14 @@ textarea {
 }
 .homePage__instructions__wrapper {
   margin: 0 auto;
-  max-width: 70%;
+  max-width: 90%;
 }
-.homePage__instructions__title {
+.homePage__instructions__title,
+.homePage__sectionTitle,
+.homePage__introStory__content h2 {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--title);
   text-align: center;
   padding: 30px;
 }
@@ -501,11 +510,16 @@ textarea {
   display: flex;
   justify-content: space-between;
   padding-top: 50px;
+  margin-bottom: 50px;
 }
 
 .homePage__instructions__card {
   width: 30%;
   text-align: center;
+  margin: 10px;
+  background-color: white;
+  padding: 20px;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
 }
 .homePage__instructions__card p {
   margin-top: 30px;
@@ -718,10 +732,7 @@ textarea {
 .heroImage {
   width: 100%;
 }
-.usersServices__content {
-  /* width: 100%;
-  background-color: #0e88de; */
-}
+
 @media only screen and (max-width: 1070px) {
   .hero__greetings__wrapper h1 {
     font-size: 50px;

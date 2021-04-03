@@ -3,7 +3,7 @@ import * as notifications from '../../globalConfigurations/Notifications'
 
 // let websiteUrl = 'http://localhost:3000'
 // let hosting = "http://localhost:3001"
-let hosting = "http://api.zanatlije.rs/"
+let hosting = "http://api.zanatlije.rs"
 export const createUser = (value) => {
     return async (dispatch) => {
         dispatch({

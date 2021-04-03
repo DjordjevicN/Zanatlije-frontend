@@ -1,6 +1,6 @@
 import Axios from 'axios'
 // let hosting = "http://localhost:3001"
-let hosting = "http://api.zanatlije.rs/"
+let hosting = "http://api.zanatlije.rs"
 
 
 // get latest Tasks

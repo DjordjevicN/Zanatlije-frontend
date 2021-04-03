@@ -1,40 +1,53 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, } from 'react';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
 import TaskCard from './TaskCard'
 import { BiKey, BiSearchAlt2, BiTask } from "react-icons/bi";
 import * as actionCreator from '../store/actions/globalActions'
 import Footer from './Footer'
+import { heroAnimation } from '../globalConfigurations/AnimationsHome'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
+
 function HomePage(props) {
+    let homeHeroText = useRef(null)
+    let homeAboutUs = useRef(null)
+    let homeHeroImage = useRef(null)
+    let newJobs = useRef(null)
+    let howToCards = useRef(null)
     let initTasks = props.getLatestTasks;
     useEffect(() => {
         return initTasks()
     }, [initTasks]);
+    useEffect(() => {
+        heroAnimation(homeHeroText, homeHeroImage, homeAboutUs, newJobs, howToCards)
+    }, []);
     return (
         <div className="homePage__wrapper">
             <div className="homePage__content">
-
-                <div className="homePage__content--hero">
-                    <div className="hero__greetings__wrapper">
-                        <h1>Hej!</h1>
-                        <h1>Da li poznaješ nekog?</h1>
-                        <p>...Majstora? Frizera? Mi ih znamo sve! Istraži bazu podataka ili oglasi novi projekat za koji ti je potreban zanatlija.</p>
-                        <Link to='/zanatlije'><button className="button homePageBtn">Pretraga</button></Link>
-                    </div>
-                    <div className="hero__animation__wrapper">
-                        <img className='heroImage' src="images/graf.png" alt="" />
+                <div className="homePage__content--hero__wrapper">
+                    <div className="homePage__content--hero">
+                        <div className="hero__greetings__wrapper" ref={homeHeroText}>
+                            <h1>Hej!</h1>
+                            <h1>Da li poznaješ nekog?</h1>
+                            <p >...Majstora? Frizera? Mi ih znamo sve! Istraži bazu podataka ili oglasi novi projekat za koji ti je potreban zanatlija.</p>
+                            <Link to='/zanatlije'><button className="button homePageBtn">Pretraga</button></Link>
+                        </div>
+                        <div className="hero__animation__wrapper" ref={homeHeroImage}>
+                            <img className='heroImage' src="images/graf.png" alt="" />
+                        </div>
                     </div>
                 </div>
-
                 <div className="homePage__introStory__wrapper">
-                    <div className="homePage__introStory__content">
+                    <div className="homePage__introStory__content" ref={homeAboutUs}>
                         <h2>Zanatlije</h2>
                         <p>Dobro došli na sajt Zanatlije uz čiju pomoć možete
                         lako da pronađete ili oglasite projekat za čiju
                         realizaciju su potrebne vredne ruke. Dovoljno je samo da pratite uputstva.</p>
                     </div>
                 </div>
-                <div className="homePage__newProposals__wrapper">
+                <div className="homePage__newProposals__wrapper" ref={newJobs}>
                     <div className="homePage__newProposals__content">
                         <h2 className='homePage__sectionTitle'>Novi poslovi</h2>
                         <div className="homePage__slider__wrapper">
@@ -54,7 +67,7 @@ function HomePage(props) {
                         </div>
                     </div>
                 </div>
-                <div className="homePage__instructions__wrapper">
+                <div className="homePage__instructions__wrapper" ref={howToCards}>
                     <div className="homePage__instructions__content">
                         <h2 className="homePage__instructions__title">
                             Kako do posla
