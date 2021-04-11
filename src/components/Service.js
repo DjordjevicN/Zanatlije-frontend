@@ -5,7 +5,7 @@ import SideBarRight from './SideBarRight'
 import EditUserService from './EditUserService'
 import * as actionCreator from '../store/actions/serviceActions'
 import * as userActionCreator from '../store/actions/userActions'
-
+import parse from 'html-react-parser'
 function Service(props) {
     const [openConfirmationModal, setOpenConfirmationModal] = useState(false);
     const [formModal, setFormModal] = useState(false);
@@ -70,7 +70,7 @@ function Service(props) {
                                 <h3>{service.servicePrice}</h3>
                             </div>
                             <div className="singleServiceCard__Description">
-                                <p>{service.serviceDescription}</p>
+                                {parse(service.serviceDescription)}
                             </div>
                             <div className="singleServiceCard__actions">
                                 <p onClick={() => {

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import parse from 'html-react-parser'
 function ZanatlijeCard({ user }) {
     return (
         <div className="zanatlijeCard__wrapper ">
@@ -8,7 +8,7 @@ function ZanatlijeCard({ user }) {
                     <h3>{user.userName}</h3>
                 </div>
                 <div className="zanatlijeCard__content--serviceDescription">
-                    <p>{user.serviceDescription.substring(0, 300)}</p>
+                    {parse(user.serviceDescription.substring(0, 300))}
                 </div>
                 <div className="zanatlijeCard__content--serviceCategory">
                     <p>{user.serviceCategory}</p>

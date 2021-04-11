@@ -1,5 +1,5 @@
 import React from 'react';
-
+import parse from 'html-react-parser'
 function SingleServiceCard(props) {
     let service = props.service;
     return (
@@ -11,7 +11,7 @@ function SingleServiceCard(props) {
 
                 </div>
                 <div className="singleServiceCard__Description">
-                    <p>{service.serviceDescription.substring(0, 200)}</p>
+                    {parse(service.serviceDescription.substring(0, 200))}
                 </div>
             </div>
         </div>
