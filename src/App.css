@@ -581,6 +581,7 @@ textarea {
   display: grid;
   place-items: center;
   top: 0;
+  left: 0;
   background-color: #999999b4;
   overflow-x: hidden;
 }

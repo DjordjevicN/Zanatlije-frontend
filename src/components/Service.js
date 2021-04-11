@@ -58,9 +58,9 @@ function Service(props) {
 
             {formModal ? <EditUserService service={service} handleFormModal={handleFormModal} /> : null}
             <div className=' mainGridLayout mobileGridLayout'>
-                <SideBarRight />
+                <SideBarLeft />
                 <div className='mobileMod--visible' >
-                    <SideBarLeft />
+                    <SideBarRight />
                 </div>
                 <div>
                     <div className="service__wrapper standardShadowBox">
