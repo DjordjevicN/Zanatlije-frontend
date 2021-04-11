@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 import EditUserFormModal from './EditUserFormModal'
 import UserDashboardView from './UserDashboardView'
 import * as actionCreator from '../store/actions/userActions'
-import * as notifications from '../globalConfigurations/Notifications'
-import { tutorial } from '../globalConfigurations/Tutorial'
-import { FaQuestionCircle } from "react-icons/fa";
+// import * as notifications from '../globalConfigurations/Notifications'
+// import { tutorial } from '../globalConfigurations/Tutorial'
+// import { FaQuestionCircle } from "react-icons/fa";
 
 function UserProfile(props) {
     const [openEditUserForm, setOpenEditUserForm] = useState(false);
@@ -82,48 +82,40 @@ function UserProfile(props) {
                             </div>
 
                         </div>
-                        <div className="userProfile__contactAndStats">
-                            <div className="userProfile__contactAndStats--email ">
-                                <p className="userProfile__contactAndStats--email--icon ">Email</p>
-                                <p className="userProfile__contactAndStats--email--text ">{email}</p>
-                            </div>
-                            <div className="userProfile__contactAndStats--phone ">
-                                <p className="userProfile__contactAndStats--phone--icon ">Telefon</p>
-                                <p className="userProfile__contactAndStats--phone--text ">{userPhoneNumber}</p>
-                            </div>
-                            <div className="userProfile__contactAndStats--status ">
-                                <p className="userProfile__contactAndStats--status--icon ">Adresa</p>
-                                <p className="userProfile__contactAndStats--status--text ">{userAddress}</p>
-                            </div>
-
-                            <div className="userProfile__contactAndStats--credit ">
-                                <p className="userProfile__contactAndStats--credit--icon ">Kredit</p>
-                                <p className="userProfile__contactAndStats--credit--text ">{userCredit}</p>
-                                <FaQuestionCircle className="tutorialIcon " onClick={() => {
-                                    notifications.tips(tutorial.creditTut)
-                                }} />
-
-                            </div>
-                            <div className="userProfile__contactAndStats--credit ">
-                                <p className="userProfile__contactAndStats--credit--icon ">Status</p>
-                                <p className="userProfile__contactAndStats--credit--text ">{userStatus}</p>
-                                <FaQuestionCircle className="tutorialIcon" onClick={() => {
-                                    notifications.tips(tutorial.statusTut)
-                                }} />
-                            </div>
-                            <div className="userProfile__contactAndStats--status ">
-                                <p className="userProfile__contactAndStats--status--icon ">Tema</p>
-                                <p className="userProfile__contactAndStats--status--text ">{userTheme}</p>
-                            </div>
-                            <div className="userProfile__contactAndStats--aboutMe ">
-                                <p className="userProfile__contactAndStats--aboutMe--title">
-                                    O meni
-                            </p>
-                                <div className="userProfile__contactAndStats--aboutMe--body">
-                                    <p>{aboutMe}</p>
+                        <div className="userProfileInformation__wrapper">
+                            <div className="userProfileInformation__content">
+                                <div className="userProfileInformation__card">
+                                    <h4>EMAIL</h4>
+                                    <p>{email}</p>
                                 </div>
+                                <div className="userProfileInformation__card">
+                                    <h4>TELEFON</h4>
+                                    <p>{userPhoneNumber}</p>
+                                </div>
+                                <div className="userProfileInformation__card">
+                                    <h4>KREDIT</h4>
+                                    <p>{userCredit}</p>
+                                </div>
+                                <div className="userProfileInformation__card">
+                                    <h4>STATUS</h4>
+                                    <p>{userStatus}</p>
+                                </div>
+                                <div className="userProfileInformation__card">
+                                    <h4>ADRESA</h4>
+                                    <p>{userAddress}</p>
+                                </div>
+                                <div className="userProfileInformation__card">
+                                    <h4>TEMA</h4>
+                                    <p>{userTheme}</p>
+                                </div>
+
+                            </div>
+                            <div className="userProfileInformation__card">
+                                <h4>O MENI</h4>
+                                <p>{aboutMe}</p>
                             </div>
                         </div>
+
                     </div>
                     <UserDashboardView />
                 </div>

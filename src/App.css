@@ -20,6 +20,7 @@ body {
   --elementHoverAccent: #0e88de;
   --title: #4f4f4f;
   --body: #585858;
+  --btnDark: rgb(255, 255, 255);
   --mainRed: rgb(245, 94, 94);
   --contentWidth: 623px;
   --webSiteMaxWidth: 1600px;
@@ -157,38 +158,14 @@ textarea {
   width: 100%;
 }
 
-.userProfile__contactAndStats--email,
-.userProfile__contactAndStats--phone,
-.userProfile__contactAndStats--credit,
-.userProfile__contactAndStats--status {
-  display: flex;
+.userProfileInformation__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 30px;
 }
-.userProfile__contactAndStats--email--icon,
-.userProfile__contactAndStats--phone--icon,
-.userProfile__contactAndStats--credit--icon,
-.userProfile__contactAndStats--status--icon,
-.userProfile__contactAndStats--grade--icon {
-  color: var(--title);
-  padding-right: 20px;
-}
-.userProfile__contactAndStats--email--text,
-.userProfile__contactAndStats--phone--text,
-.userProfile__contactAndStats--credit--text,
-.userProfile__contactAndStats--status--text,
-.userProfile__contactAndStats--grade--text {
-  color: var(--mainAccent);
-}
-.userProfile__contactAndStats--aboutMe--title {
-  text-align: center;
-  font-weight: 600;
-  color: var(--title);
-  font-size: 18px;
+.userProfileInformation__card {
   padding: 20px;
 }
-.userProfile__contactAndStats--aboutMe--body {
-  color: var(--body);
-}
-
 .userFeedTask__wrapper:hover,
 .proposals__wrapper:hover,
 .singleServiceCard__wrapper:hover,
@@ -224,12 +201,12 @@ textarea {
 .linkWithIcon {
   display: flex;
   align-items: center;
+  color: var(--btnDark);
 }
 
 .sideBarRight__item--icon {
   font-size: 18px;
-  /* color: #555555; */
-  color: white;
+  color: var(--btnDark);
   padding-right: 5px;
 }
 
@@ -323,10 +300,10 @@ textarea {
   font-family: "Mulish", sans-serif;
   color: white;
   margin-top: 10px;
-  border-radius: 50px;
+  border-radius: 3px;
   border: none;
   outline: none;
-  filter: drop-shadow(3px 8px 8px rgb(147, 193, 219));
+  /* filter: drop-shadow(3px 8px 8px rgb(147, 193, 219)); */
   background: linear-gradient(
     56deg,
     rgb(131, 210, 255) 0%,
@@ -335,7 +312,7 @@ textarea {
   transition: 0.3s;
 }
 .button:hover {
-  filter: drop-shadow(3px 3px 6px rgb(147, 193, 219));
+  /* filter: drop-shadow(3px 3px 6px rgb(147, 193, 219)); */
   background: linear-gradient(
     56deg,
     rgb(131, 210, 255) 25%,
@@ -671,9 +648,7 @@ textarea {
   display: grid;
   place-items: center;
 }
-.linkWithIcon {
-  color: white;
-}
+
 .footer__wrapper {
   width: 100%;
 
