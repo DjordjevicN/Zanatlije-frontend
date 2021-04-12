@@ -712,7 +712,9 @@ textarea {
 .heroImage {
   width: 100%;
 }
-
+.userProfileInformation--name {
+  padding: 20px;
+}
 @media only screen and (max-width: 1070px) {
   .hero__greetings__wrapper h1 {
     font-size: 50px;
